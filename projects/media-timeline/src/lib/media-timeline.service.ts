@@ -192,6 +192,9 @@ export class MediaTimelineService {
         if (moved < 0) {
           const newDate = (this.date?.getTime()) + moved * 1000;
           this.setTime(new Date(newDate));
+        } else {
+          const newDate = (this.date?.getTime()) + moved * 1000;
+          this.setTime(new Date(newDate));
         }
       } else {
 
