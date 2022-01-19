@@ -105,6 +105,37 @@
           }
         }
       }
+    },
+    "media-timeline": {
+      "projectType": "library",
+      "root": "projects/media-timeline",
+      "sourceRoot": "projects/media-timeline/src",
+      "prefix": "ngx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/media-timeline/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/media-timeline/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/media-timeline/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/media-timeline/src/test.ts",
+            "tsConfig": "projects/media-timeline/tsconfig.spec.json",
+            "karmaConfig": "projects/media-timeline/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "time-line"
